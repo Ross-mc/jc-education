@@ -7,7 +7,13 @@ const Dropdown = ({items}) => {
       return (
         <li key={item.href} className={classes.link}>
           <div>
-            <Link href={item.href} >{item.text}</Link>
+            <Link href={item.href} >
+              <a>
+                <div style={{height: "100%"}}>
+                  {item.text}
+                </div>
+              </a>
+            </Link>
           </div>
         </li>
       )

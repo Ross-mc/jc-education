@@ -14,6 +14,10 @@ const Navigation = () => {
     {
       href: "/blog",
       text: "Blog"
+    },
+    {
+      href: "/brands",
+      text: "Brands"
     }
   ]
 
