@@ -1,8 +1,22 @@
 import Link from "next/link";
+import {isDesktop} from "react-device-detect"
 import Logo from "./Logo";
+import MobileNav from "./MobileNav";
+import DesktopNav from "./DesktopNav";
 import classes from "./navigation.module.css"
 
 const Navigation = () => {
+  const navigationLinks = [
+    {
+      href: "/bookings",
+      text: "Bookings"
+    },
+    {
+      href: "/blog",
+      text: "Blog"
+    }
+  ]
+
   return (
     <header className={classes.header}>
       <Link href="/">
@@ -12,16 +26,7 @@ const Navigation = () => {
       </Link>
       <nav>
         <ul>
-          <li>
-            <div>
-              <Link href="/bookings">Bookings</Link>
-            </div>
-          </li>
-          <li>
-            <div>
-              <Link href="/blog">Blog</Link>
-            </div>
-          </li>
+          {isDesktop ? <DesktopNav items={navigationLinks}/> : <MobileNav items={navigationLinks}/>}
         </ul>
       </nav>
     </header>
