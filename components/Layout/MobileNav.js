@@ -1,18 +1,8 @@
-import Link from "next/link"
+import Dropdown from "./Dropdown"
 
 const MobileNav = ({items}) => {
   return (
-    <>
-    {items.map(item => {
-      return (
-        <li key={item.href}>
-          <div>
-            <Link href={item.href}>{item.text}</Link>
-          </div>
-        </li>
-      )
-    })}
-    </>
+    <Dropdown items={items} />
   )
 }
 

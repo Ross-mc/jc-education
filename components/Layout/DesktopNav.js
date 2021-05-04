@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
+import classes from "./navigation.module.css"
 
 const DesktopNav = ({items}) => {
   return (
@@ -6,7 +7,7 @@ const DesktopNav = ({items}) => {
     {items.map(item => {
       return (
         <li key={item.href}>
-          <div>
+          <div className={classes.link}>
             <Link href={item.href}>{item.text}</Link>
           </div>
         </li>

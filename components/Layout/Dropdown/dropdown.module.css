@@ -1,0 +1,35 @@
+.dropdown {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  width: 100%;
+  top: 5rem;
+  background-color: var(--color-grey-300);
+  animation: rotateDropdown 600ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.link {
+  padding: 1rem;
+}
+
+.link a {
+  color: var(--color-primary-500);
+  font-size: var(--size-8);
+  line-height: var(--size-8);
+  padding: 1rem;
+  text-decoration: none;
+}
+
+
+@keyframes rotateDropdown {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  70% {
+    transform: rotateX(20deg)
+  }
+  100% {
+    transform: rotateX(0deg)
+  }
+}
