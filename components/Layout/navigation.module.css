@@ -37,3 +37,11 @@
   height: 80px
 }
 
+.icon{
+  position: "relative";
+  top: -1.5rem;
+  color: var(--color-primary-500);
+}
+
+
+

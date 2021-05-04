@@ -1,6 +1,7 @@
-import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 
-module.exports = {
-  bars: faBars
+export default {
+  bars: faBars,
+  close: faTimes
 }
 
