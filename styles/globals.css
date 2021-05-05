@@ -25,6 +25,9 @@ body {
   --color-grey-800: hsl(265, 5%, 25%);
   --color-grey-900: hsl(265, 5%, 15%);
 
+  --color-white: rgb(240, 240, 240);
+  --color-offwhite: rgb(230, 230, 230);
+
   --size-1: 0.25rem;
   --size-2: 0.5rem;
   --size-3: 0.75rem;
@@ -44,6 +47,7 @@ body {
   font-family: var(--font-dosis);
 
   min-height: 100%;
+  background-color:var(--color-white);
 
 
 }

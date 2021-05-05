@@ -2,3 +2,34 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (min-width: 768px){
+  .courseContainer{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.card{
+  color:var(--color-primary-300);
+  padding: 2rem;
+  background-color: var(--color-offwhite);
+  box-shadow: 0 0 5px var(--color-grey-400);
+  width: 90%;
+  margin: 1rem auto;
+  max-width: 450px;
+}
+
+.card h3 {
+  color: black;
+}
+
+.card a {
+  background-color: var(--color-primary-500);
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding: .5rem;
+  margin: 1rem;
+  border-radius: .5rem;
+}

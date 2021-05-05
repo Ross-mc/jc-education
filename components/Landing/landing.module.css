@@ -14,8 +14,8 @@
 .titleCard{
   color:var(--color-primary-300);
   padding: 2rem;
-  background-color: var(--color-grey-200);
-  box-shadow: 0 0 5px var(--color-primary-300);
+  background-color: var(--color-offwhite);
+  box-shadow: 0 0 5px var(--color-grey-400);
   width: 98%;
   margin: 1rem auto;
   max-width: 450px;

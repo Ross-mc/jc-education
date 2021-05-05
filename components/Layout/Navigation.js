@@ -16,8 +16,8 @@ const Navigation = () => {
       text: "Blog"
     },
     {
-      href: "/brands",
-      text: "Brands"
+      href: "/contact",
+      text: "Contact"
     }
   ]
 

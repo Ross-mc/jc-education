@@ -1,6 +1,8 @@
+import classes from "./courses.module.css"
+
 const Card = ({course}) =>{
    return (
-     <div>
+     <div className={classes.card}>
        <h2>{course.title}</h2>
        <h3>{course.price}</h3>
        <p>{course.brief}</p>
