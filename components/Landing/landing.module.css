@@ -1,0 +1,14 @@
+.link{
+  text-decoration: none;
+  color: var(--color-primary-300);
+  font-size: 1.2rem;
+}
+
+.img{
+  width: 100vw;
+}
+
+.img img{
+  width: 100%;
+  height: auto;
+}
