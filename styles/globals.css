@@ -4,7 +4,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  min-height: 90vh;
 
 
   --color-primary-100: hsl(334, 82%, 90%);
@@ -45,6 +44,8 @@ body {
 
   font-family: var(--font-dosis);
 
+  min-height: 100%;
+
 
 }
 
@@ -52,8 +53,12 @@ body {
   box-sizing: border-box;
 }
 
+
+
+
 main{
-  min-height: 69vh;
+  min-height: 80vh;
+  margin-top:10vh 
 }
 
 
