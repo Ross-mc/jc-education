@@ -30,7 +30,7 @@ const Navigation = () => {
       </Link>
       <nav>
         <ul>
-          {isDesktop ? <DesktopNav items={navigationLinks}/> : <MobileNav items={navigationLinks}/>}
+          {!isDesktop ? <DesktopNav items={navigationLinks}/> : <MobileNav items={navigationLinks}/>}
         </ul>
       </nav>
     </header>
