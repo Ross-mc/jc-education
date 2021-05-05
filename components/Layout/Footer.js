@@ -28,7 +28,7 @@ const Footer = () => {
       <div>
         <small>
           Web Design by{" "}
-          <a href="www.rossmcintyre.tech" target="_blank" rel="noreferrer">
+          <a href="https://www.rossmcintyre.tech" target="_blank" rel="noreferrer">
             Ross McIntyre
           </a>{" "}
           - &copy; 2021
