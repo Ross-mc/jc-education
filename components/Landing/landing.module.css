@@ -10,3 +10,37 @@
   height: auto;
   max-width: 800px;
 }
+
+.titleCard{
+  color:var(--color-primary-300);
+  padding: 2rem;
+  background-color: var(--color-grey-200);
+  box-shadow: 0 0 5px var(--color-primary-300);
+  width: 98%;
+  margin: 1rem auto;
+  max-width: 450px;
+}
+
+.titleCard ul{
+  margin: 0;
+  padding: 0;
+}
+
+.titleCard li{
+  list-style: none;
+  margin-left: 0;
+}
+
+.titleCard a {
+  color: black;
+  text-decoration: none;
+}
+
+.titleCard h2{
+  font-family: var(--font-open-sans-condensed);
+}
+
+.titleCard img{
+  border-radius: 50%;
+  border: 1px solid white;
+}

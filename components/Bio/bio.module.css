@@ -1,0 +1,12 @@
+.link{
+  text-decoration: none;
+  color: var(--color-primary-300);
+  font-size: 1.2rem;
+}
+
+
+.img img{
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+}

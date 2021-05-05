@@ -7,7 +7,12 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charSet="UTF-8"/>
+        <meta http-httpequiv="X-UA-Compatible" content="IE=Edge"/>
+        <meta ty/>
         <link rel="ico" href="/favicon.ico"/>
+        <title>Jacki Clarke</title>
+        <meta name="description" content="Jacki Clarke - CND Education Ambassador"/>
       </Head>
       <Component {...pageProps} />
     </Layout>

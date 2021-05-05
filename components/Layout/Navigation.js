@@ -8,8 +8,8 @@ import classes from "./navigation.module.css"
 const Navigation = () => {
   const navigationLinks = [
     {
-      href: "/bookings",
-      text: "Bookings"
+      href: "/bio",
+      text: "About"
     },
     {
       href: "/blog",
