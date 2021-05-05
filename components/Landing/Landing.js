@@ -11,9 +11,6 @@ const Landing = ({ titleCard, blurb }) => {
         <div className="flex-item">
           <p>{blurb}</p>
         </div>
-        <div className="flex-item">
-          <h1>COURSES</h1>
-        </div>
       </div>
     </>
   );
