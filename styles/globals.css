@@ -54,7 +54,8 @@ body {
 
 
 h1,h2{
-  color: var(--color-primary-500)
+  color: var(--color-primary-500);
+  font-family: var(--font-open-sans-condensed)
 }
 
 .flex-container{
