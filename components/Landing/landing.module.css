@@ -4,11 +4,9 @@
   font-size: 1.2rem;
 }
 
-.img{
-  width: 100vw;
-}
 
 .img img{
   width: 100%;
   height: auto;
+  max-width: 800px;
 }
