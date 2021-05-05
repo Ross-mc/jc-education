@@ -1,14 +1,36 @@
-import Footer from "./Footer"
-import Navigation from "./Navigation"
+import Footer from "./Footer";
+import Navigation from "./Navigation";
+import { isDesktop } from "react-device-detect";
+import { useEffect } from "react";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
+  const minHeight = isDesktop ? "75" : "73";
+
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    window.addEventListener("resize", () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+  });
+
   return (
     <div className="wrapper">
-      <Navigation /> 
-      <main>{children}</main>
+      <Navigation />
+      <main
+        style={{
+          minHeight: "75vh",
+          marginTop: "15vh",
+          minHeight: `calc(var(--vh, 1vh) * ${minHeight})`,
+        }}
+      >
+        {children}
+      </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

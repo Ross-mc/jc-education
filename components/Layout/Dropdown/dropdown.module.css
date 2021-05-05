@@ -3,7 +3,7 @@
   z-index: 100;
   left: 0;
   width: 100%;
-  top: 5rem;
+  top: 10vh;
   background-color: var(--color-grey-300);
   animation: rotateDropdown 600ms ease-in-out forwards;
   transform-origin: top center;
