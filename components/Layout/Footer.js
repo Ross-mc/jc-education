@@ -26,7 +26,13 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <small>Ross McIntyre 2021</small>
+        <small>
+          Web Design by{" "}
+          <a href="www.rossmcintyre.tech" target="_blank" rel="noreferrer">
+            Ross McIntyre
+          </a>{" "}
+          - &copy; 2021
+        </small>
       </div>
     </footer>
   );

@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.footer a{
+.list a{
   margin: 10px;
   margin-left: 20px;
   position: relative;
@@ -28,4 +28,12 @@
 .list a path{
   color: var(--color-primary-500);
   margin-left: 10px;
+}
+
+.footer small{
+  color: var(--color-grey-300);
+}
+
+.footer small a {
+  color: var(--color-grey-700);
 }
