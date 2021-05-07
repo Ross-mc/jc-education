@@ -16,7 +16,7 @@ const TitleCard = ({titleCard}) => {
         {titleCard.links.map(link => {
           return (
             <li key={link.href}>
-              <a href={link.href} target="_blank" rel="noreferrer">{link.company}</a>
+              <a href={link.href} target="_blank" rel="noreferrer" className="btn">{link.company}</a>
             </li>
           )
         })}

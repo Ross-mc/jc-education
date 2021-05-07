@@ -31,19 +31,6 @@
   margin-top: 2rem;
 }
 
-.titleCard a {
-  background-color: var(--color-primary-500);
-  width: 100%;
-  text-decoration: none;
-  color: white;
-  padding: .5rem;
-  margin: 1rem;
-  border-radius: .5rem;
-}
-
-.titleCard a:hover, .titleCard a:focus{
-  background-color: var(--color-primary-300);
-}
 
 
 .titleCard h2{

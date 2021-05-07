@@ -6,7 +6,7 @@ const Card = ({course}) =>{
        <h2>{course.title}</h2>
        <h3>{course.price}</h3>
        <p>{course.brief}</p>
-       <a href={course.details} target="_blank" rel="noreferrer">More Details</a>
+       <a href={course.details} target="_blank" rel="noreferrer" className="btn">More Details</a>
      </div>
    )
 }
