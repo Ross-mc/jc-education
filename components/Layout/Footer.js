@@ -15,7 +15,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={icons.instagram} />
           </a>
         </div>
-        <div className="listItem">
+        <div className="listItem" style={{marginTop: "2px"}}>
           <a
             href="https://www.facebook.com/jacki.bridge"
             target="_blank"
