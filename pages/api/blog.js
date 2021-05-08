@@ -35,11 +35,15 @@ const postHandler = async (blogPost) => {
 
 export default async (req, res) => {
   if (req.method === "POST"){
+    const {title, base64Img, text} = req.body;
+    if (!title.trim() || !base64Img.trim() || !text.trim()){
+      return res.status(400).json({message: "Invalid Post"})
+    }
     try {
-      const result = await postHandler(req.body);
-      res.status(201).json({message: "Success!"})
+      const result = await postHandler({title, base64Img, text});
+      return res.status(201).json({message: "Success!"})
     } catch (error) {
-      res.status(500).json({message: error})
+      return res.status(500).json({message: "Internal Server Error"})
     }
   }
 }
