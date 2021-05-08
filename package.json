@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "dotenv": "^9.0.0",
     "mongodb": "^3.6.6",
+    "mongodb-client-encryption": "^1.2.3",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-device-detect": "^1.17.0",
