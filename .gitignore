@@ -38,3 +38,5 @@ yarn-error.log*
 netlify.toml
 
 .env
+
+tempAccount.js
