@@ -7,11 +7,7 @@ const postHandler = async (blogPost) => {
     title,
     base64Img,
     text,
-    date: new Date().toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "2-digit"
-    })
+    date: Date()
   }
 
   let connection;
@@ -45,7 +41,7 @@ const getHandler = async () => {
   try {
     console.log('inside the try')
     const blogPostsCollection = db.collection("blogPosts");
-    const blogPosts = await blogPostsCollection.find({}).toArray();
+    const blogPosts = await blogPostsCollection.find({}).sort({date: -1}).toArray();
     connection.close();
     return blogPosts
   } catch (error) {
