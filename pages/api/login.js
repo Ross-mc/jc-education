@@ -6,6 +6,9 @@ require("dotenv").config();
 import verifyPassword from "../../utils/auth/verifyPassword";
 
 export default NextAuth({
+  session: {
+    jwt: true
+  },
   providers: [
     Providers.Credentials({
       async authorise(credentials){
