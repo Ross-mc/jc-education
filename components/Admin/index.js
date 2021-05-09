@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { signIn } from "next-auth/client";
+import { signIn, useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import LoginForm from "./LoginForm";
@@ -8,6 +8,7 @@ import BlogForm from "./BlogForm";
 const Admin = () => {
   const usernameRef = useRef("");
   const passwordRef = useRef("");
+  const [session, bool] = useSession()
 
   const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -20,12 +21,22 @@ const Admin = () => {
     const password = passwordRef.current.value;
 
     const result = await signIn("credentials", {
-      redirect: false,
       username,
       password,
-    });
+      redirect: false
+    })
+    console.log(result)
+    console.log(session)
 
-    console.log(result);
+
+
+    // const result = await signIn("credentials", {
+    //   redirect: false,
+    //   username,
+    //   password,
+    // });
+
+    // console.log(result);
   };
 
   return (

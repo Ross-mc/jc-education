@@ -3,15 +3,20 @@ import Providers from "next-auth/providers";
 import {MongoClient} from "mongodb";
 require("dotenv").config();
 
-import verifyPassword from "../../utils/auth/verifyPassword";
+import verifyPassword from "../../../utils/auth/verifyPassword";
 
-export default NextAuth({
+const options = {
+  database: process.env.MONGODB_URI,
+  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   session: {
     jwt: true
   },
+  pages: {
+    signIn: "/admin"
+  },
   providers: [
     Providers.Credentials({
-      async authorise(credentials){
+      async authorize(credentials){
         let connection;
         try {
           connection = await MongoClient.connect(process.env.MONGODB_URI)
@@ -33,6 +38,7 @@ export default NextAuth({
             throw new Error("Invalid Login Credentials")
           }
           connection.close();
+          console.log(user);
           return {user: user.username}
         } catch (error) {
           connection.close();
@@ -41,4 +47,10 @@ export default NextAuth({
       }
     })
   ]
-})
+
+  
+};
+
+export default (req, res) =>  {
+  return NextAuth(req, res, options)
+}
