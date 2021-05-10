@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { signIn, useSession } from "next-auth/client";
+import { useState, useRef, useEffect } from "react";
+import { signIn, useSession, getSession  } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import LoginForm from "./LoginForm";
@@ -8,7 +8,7 @@ import BlogForm from "./BlogForm";
 const Admin = () => {
   const usernameRef = useRef("");
   const passwordRef = useRef("");
-  const [session, bool] = useSession()
+  const [session, loading] = useSession()
 
   const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -28,16 +28,13 @@ const Admin = () => {
     console.log(result)
     console.log(session)
 
-
-
-    // const result = await signIn("credentials", {
-    //   redirect: false,
-    //   username,
-    //   password,
-    // });
-
-    // console.log(result);
   };
+
+  useEffect(() => {
+    getSession().then(session => {
+      console.log(session)
+    })
+  })
 
   return (
     <section>

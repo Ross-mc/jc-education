@@ -4,12 +4,14 @@ import {MongoClient} from "mongodb";
 require("dotenv").config();
 
 import verifyPassword from "../../../utils/auth/verifyPassword";
+import { session } from "next-auth/client";
 
 const options = {
   database: process.env.MONGODB_URI,
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   session: {
-    jwt: true
+    jwt: true,
+    maxAge: 60//60 seconds
   },
   pages: {
     signIn: "/admin"
@@ -38,15 +40,27 @@ const options = {
             throw new Error("Invalid Login Credentials")
           }
           connection.close();
-          console.log(user);
-          return {user: user.username}
+          return user.username
+            
         } catch (error) {
           connection.close();
           throw new Error("Internal Server Error")
         }
       }
     })
-  ]
+  ],
+  callbacks: {
+    async jwt(token, user, account, profile, isNewUser){
+      console.log('user inside jwt', user)
+      token.user = user;
+      console.log('token inside jwt', token)
+      return token
+    },
+    async session(session, token){
+      console.log('inside session', session, token);
+      return session
+    }
+  }
 
   
 };
