@@ -1,6 +1,8 @@
 import Admin from "../../components/Admin"
 
-const AdminPage = () => {
+const AdminPage = (props) => {
+
+  console.log(props.user)
   return (
     <>
       <Admin />

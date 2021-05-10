@@ -8,11 +8,33 @@ import BlogForm from "./BlogForm";
 const Admin = () => {
   const usernameRef = useRef("");
   const passwordRef = useRef("");
-  // const [session, loading] = useSession()
 
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  const router = useRouter();
+  useEffect(async () => {
+    try {
+      const result = await fetch("api/auth/account");
+      const data = await result.json();
+      if (data.username){
+        setUser(data.username);
+        setLoggedIn(true)
+      }
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setLoading(false)
+    }
+  }, [])
+
+  if (loading){
+    return (
+      <section>
+        <h1>Loading....</h1>
+      </section>
+    )
+  }
 
   const submitLoginRequest = async (e) => {
     e.preventDefault();
@@ -31,27 +53,15 @@ const Admin = () => {
         password
       })
     });
-    console.log(result)
     const data = await result.json();
     console.log(data);
-
-    const result2 = await fetch("/api/auth/account");
-    console.log(result2);
-    const data2 = await result2.json();
-    console.log(data2)
+    
 
     } catch (error) {
       console.log(error)
     }
-
     
   };
-
-  // useEffect(() => {
-  //   getSession().then(session => {
-  //     console.log(session)
-  //   })
-  // })
 
   return (
     <section>
