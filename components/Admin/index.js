@@ -6,12 +6,51 @@ import LoginForm from "./LoginForm";
 import BlogForm from "./BlogForm";
 
 const Admin = () => {
+  //login form refs
   const usernameRef = useRef("");
   const passwordRef = useRef("");
 
+  //login related states
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [isLoggedIn, setLoggedIn] = useState(false);
+
+  //blogform refs
+
+  const titleRef = useRef("");
+  const contentRef = useRef("");
+  const [images, setImages] = useState([]);
+
+  const fileToDataUri = (image) => {
+    return new Promise((res) => {
+      const reader = new FileReader();
+      const { type, name, size } = image;
+      reader.addEventListener("load", () => {
+        res({
+          base64: reader.result,
+          name: name,
+          type,
+          size: size,
+        });
+      });
+      reader.readAsDataURL(image);
+    });
+  };
+
+  const storeImage = async (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const newImagesPromises = [];
+      for (let i = 0; i < e.target.files.length; i++) {
+        newImagesPromises.push(fileToDataUri(e.target.files[i]));
+      }
+      const newImages = await Promise.all(newImagesPromises);
+      //grab all the images, save them to state
+      setImages([
+        ...images,
+        ...newImages.filter((image) => image !== undefined),
+      ]);
+    }
+  };
 
   useEffect(async () => {
     try {
@@ -20,6 +59,8 @@ const Admin = () => {
       if (data.username) {
         setUser(data.username);
         setLoggedIn(true);
+        passwordRef.current.value = "";
+        usernameRef.current.value = "";
       }
     } catch (error) {
       console.error(error);
@@ -54,20 +95,33 @@ const Admin = () => {
         }),
       });
 
-      if (result.status === 200){
+      if (result.status === 200) {
         setLoggedIn(true);
         const data = await result.json();
-        setUser(data.user)
+        setUser(data.user);
       }
     } catch (error) {
       console.log(error);
     }
   };
 
+  const submitBlogPost = (e) => {
+    e.preventDefault();
+    console.log(titleRef.current.value);
+    console.log(contentRef.current.value);
+    console.log(images[0]);
+  };
+
   return (
     <section>
       {isLoggedIn ? (
-        <BlogForm user={user} />
+        <BlogForm
+          user={user}
+          contentRef={contentRef}
+          titleRef={titleRef}
+          storeImage={storeImage}
+          submitHandler={submitBlogPost}
+        />
       ) : (
         <LoginForm
           submitHandler={submitLoginRequest}
