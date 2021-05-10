@@ -33,7 +33,12 @@ const Admin = () => {
     });
     console.log(result)
     const data = await result.json();
-    console.log(data)
+    console.log(data);
+
+    const result2 = await fetch("/api/auth/account");
+    console.log(result2);
+    const data2 = await result2.json();
+    console.log(data2)
 
     } catch (error) {
       console.log(error)
