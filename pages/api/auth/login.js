@@ -4,6 +4,7 @@ import jsonwebtoken from "jsonwebtoken";
 import {serialize} from "cookie"
 require("dotenv").config();
 
+const JWT_EXPIRY = parseInt(process.env.JWT_EXPIRY);
 
 export default async (req, res) => {
   const { username, password } = JSON.parse(req.body);
@@ -28,9 +29,9 @@ export default async (req, res) => {
       return res.status(401).json({message: "Invalid Login Credentials"});
     }
     connection.close();
-    const token = jsonwebtoken.sign({username}, process.env.JWT_SECRET, {expiresIn: "60s"})
+    const token = jsonwebtoken.sign({username}, process.env.JWT_SECRET, {expiresIn: JWT_EXPIRY + "s"})
     const cookieOptions = {
-      maxAge: 60,
+      maxAge: JWT_EXPIRY,
       httpOnly: true
     }
     res.setHeader("Set-Cookie", serialize("jwt", token, cookieOptions));
