@@ -17,23 +17,23 @@ const Admin = () => {
     try {
       const result = await fetch("api/auth/account");
       const data = await result.json();
-      if (data.username){
+      if (data.username) {
         setUser(data.username);
-        setLoggedIn(true)
+        setLoggedIn(true);
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [])
+  }, []);
 
-  if (loading){
+  if (loading) {
     return (
       <section>
         <h1>Loading....</h1>
       </section>
-    )
+    );
   }
 
   const submitLoginRequest = async (e) => {
@@ -44,29 +44,30 @@ const Admin = () => {
 
     try {
       const result = await fetch("/api/auth/login", {
-      method: "POST",
-      header: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username,
-        password
-      })
-    });
-    const data = await result.json();
-    console.log(data);
-    
+        method: "POST",
+        header: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
 
+      if (result.status === 200){
+        setLoggedIn(true);
+        const data = await result.json();
+        setUser(data.user)
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
   };
 
   return (
     <section>
       {isLoggedIn ? (
-        <BlogForm />
+        <BlogForm user={user} />
       ) : (
         <LoginForm
           submitHandler={submitLoginRequest}

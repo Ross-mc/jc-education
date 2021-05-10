@@ -34,7 +34,7 @@ export default async (req, res) => {
       httpOnly: true
     }
     res.setHeader("Set-Cookie", serialize("jwt", token, cookieOptions));
-    res.json({message: "Success!"});
+    res.json({message: "Success!", user: user.username});
 
   } catch (error) {
     connection.close();
