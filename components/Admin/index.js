@@ -105,11 +105,31 @@ const Admin = () => {
     }
   };
 
-  const submitBlogPost = (e) => {
+  const submitBlogPost = async (e) => {
     e.preventDefault();
     console.log(titleRef.current.value);
     console.log(contentRef.current.value);
     console.log(images[0]);
+    let base64Img = "placeholder"
+    if (images.length > 0){
+      base64Img = images[0].base64
+    }
+    const newBlogPost = {
+      title: titleRef.current.value,
+      text: contentRef.current.value,
+      base64Img,
+    }
+    const result = await fetch("/api/blog", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newBlogPost)
+    })
+    const response = await result.json();
+    console.log(response)
+
+
   };
 
   return (
