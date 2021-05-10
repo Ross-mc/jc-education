@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { signIn, useSession, getSession  } from "next-auth/client";
+// import { signIn, useSession, getSession  } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import LoginForm from "./LoginForm";
@@ -8,7 +8,7 @@ import BlogForm from "./BlogForm";
 const Admin = () => {
   const usernameRef = useRef("");
   const passwordRef = useRef("");
-  const [session, loading] = useSession()
+  // const [session, loading] = useSession()
 
   const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -20,21 +20,33 @@ const Admin = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
-    const result = await signIn("credentials", {
-      username,
-      password,
-      redirect: false
-    })
+    try {
+      const result = await fetch("/api/auth/login", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    });
     console.log(result)
-    console.log(session)
+    const data = await result.json();
+    console.log(data)
 
+    } catch (error) {
+      console.log(error)
+    }
+
+    
   };
 
-  useEffect(() => {
-    getSession().then(session => {
-      console.log(session)
-    })
-  })
+  // useEffect(() => {
+  //   getSession().then(session => {
+  //     console.log(session)
+  //   })
+  // })
 
   return (
     <section>
