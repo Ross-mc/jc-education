@@ -1,12 +1,22 @@
 import {MongoClient} from "mongodb";
 import jsonwebtoken from "jsonwebtoken";
+import {sendImage} from "../../utils/cloudinary"
 require("dotenv").config();
+
 
 const postHandler = async (blogPost) => {
   const {title, base64Img, text} = blogPost;
+  let imageUrl;
+
+  try {
+    imageUrl = await sendImage(base64Img)
+  } catch (error) {
+    throw new Error(error)
+  }
+
   const newPost = {
     title,
-    base64Img,
+    imageUrl,
     text,
     date: Date()
   }
