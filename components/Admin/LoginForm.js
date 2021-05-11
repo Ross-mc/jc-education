@@ -1,4 +1,4 @@
-import classes from "./admin.module.css"
+import classes from "./admin.module.css";
 
 const LoginForm = ({submitHandler, usernameRef, passwordRef}) => {
   return (

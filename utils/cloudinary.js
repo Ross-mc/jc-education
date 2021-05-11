@@ -8,7 +8,7 @@ cloudinary.config({
 
 const sendImage = async base64Img => {
   try {
-    const result = await cloudinary.uploader.upload(base64Img, { tags: "receiptUpload" });
+    const result = await cloudinary.uploader.upload(base64Img, { tags: "jc-education" });
     return result.url
   } catch (error) {
     throw new Error("No response from Cloudinary")

@@ -34,4 +34,47 @@
   outline: none;
 }
 
+.blogForm {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: var(--color-grey-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-500);
+  box-shadow: 0 0 5px var(--color-grey-400);
+  gap: 0.5rem;
+}
 
+.blogForm input,
+.blogForm textarea{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.blogTitle {
+  background-color: transparent;
+  border: none;
+  width: 40%;
+  text-align: left;
+  border-bottom: 3px solid var(--color-primary-500);
+  color: var(--color-primary-500);
+  outline: none;
+  width: 80%;
+}
+
+.blogForm input[type="file"]{
+  width: 100%;
+  position: relative;
+  left: 25%
+}
+
+.blogForm button {
+  width: 30%;
+}
+
+.blogForm textarea{
+  width: 90%;
+  border: 1px solid var(--color-primary-500);
+}
