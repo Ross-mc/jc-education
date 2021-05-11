@@ -40,7 +40,6 @@ const getHandler = async () => {
   const db = connection.db();
   
   try {
-    console.log('inside the try')
     const blogPostsCollection = db.collection("blogPosts");
     const blogPosts = await blogPostsCollection.find({}).sort({date: -1}).toArray();
     connection.close();
@@ -54,7 +53,6 @@ const getHandler = async () => {
 const checkIfValidUser = (jwtCookie) => {
   try {
     const decoded = jsonwebtoken.verify(jwtCookie, process.env.JWT_SECRET);
-    console.log(decoded)
     return decoded.username ? true : false
   } catch (error) {
     return false
