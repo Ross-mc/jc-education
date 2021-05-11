@@ -9,6 +9,6 @@ export default async (req, res) => {
       return res.json({message: "User is not logged in"})
     }
   } else {
-    return res.status(400)
+    return res.status(405).json({message: "Method not allowed"})
   }
 }

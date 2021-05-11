@@ -1,4 +1,5 @@
 import {MongoClient} from "mongodb";
+import jsonwebtoken from "jsonwebtoken";
 require("dotenv").config();
 
 const postHandler = async (blogPost) => {
@@ -50,8 +51,23 @@ const getHandler = async () => {
   }
 }
 
+const checkIfValidUser = (jwtCookie) => {
+  try {
+    const decoded = jsonwebtoken.verify(jwtCookie, process.env.JWT_SECRET);
+    console.log(decoded)
+    return decoded.username ? true : false
+  } catch (error) {
+    return false
+  }
+}
+
 export default async (req, res) => {
   if (req.method === "POST"){
+    const isValidUser = checkIfValidUser(req.cookies.jwt);
+    if (!isValidUser){
+      return res.status(401).json({message: "Not authorised"});
+    }
+
     const {title, base64Img, text} = req.body;
     if (!title.trim() || !base64Img.trim() || !text.trim()){
       return res.status(400).json({message: "Invalid Post"})
@@ -71,6 +87,6 @@ export default async (req, res) => {
       return res.status(500).json({message: "Internal Server Error"})
     }
   } else {
-    return res.status(405);
+    return res.status(405).json({message: "Invalid method"});
   }
 }

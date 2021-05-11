@@ -107,9 +107,7 @@ const Admin = () => {
 
   const submitBlogPost = async (e) => {
     e.preventDefault();
-    console.log(titleRef.current.value);
-    console.log(contentRef.current.value);
-    console.log(images[0]);
+    //validate user inputs
     let base64Img = "placeholder"
     if (images.length > 0){
       base64Img = images[0].base64
@@ -119,6 +117,8 @@ const Admin = () => {
       text: contentRef.current.value,
       base64Img,
     }
+
+    //wrap api call in try catch
     const result = await fetch("/api/blog", {
       method: "POST",
       headers: {
@@ -127,7 +127,6 @@ const Admin = () => {
       body: JSON.stringify(newBlogPost)
     })
     const response = await result.json();
-    console.log(response)
 
 
   };
