@@ -65,13 +65,12 @@
 }
 
 .blogForm input[type="file"]{
-  width: 100%;
   position: relative;
-  left: 25%
+  width: 60%
 }
 
 .blogForm button {
-  width: 30%;
+  width: 40%;
 }
 
 .blogForm textarea{
