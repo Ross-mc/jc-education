@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import Navigation from "./Navigation";
 import { isDesktop } from "react-device-detect";
 import { useEffect } from "react";
+import Modal from "./Modal/Modal";
 
 const Layout = ({ children }) => {
   const minHeight = isDesktop ? "75" : "73";
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
+      <Modal />
       <Footer />
     </div>
   );
