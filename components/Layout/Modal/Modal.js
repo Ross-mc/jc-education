@@ -4,13 +4,24 @@ import { useContext } from "react";
 import ModalCtx from "../../../store/modalCtx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../../icons";
+import { isMobile } from "react-device-detect";
 
 const Modal = () => {
+
+  const mobileScrollableStyle = {
+    maxHeight: "calc(100vh - 80px)",
+    overflowY: "auto"
+  }
+
+  const modal = classes.modal;
+  console.log(modal)
+
+
 
   const modalCtx = useContext(ModalCtx);
   return (
     <>
-    <div className={classes.modal}>
+    <div className={classes.modal} style={isMobile ? mobileScrollableStyle: null}>
       <div className={classes.icon} onClick={modalCtx.toggleModal}>
       <p style={{visibility: "hidden"}}>.........</p><FontAwesomeIcon icon={icons.close}/></div>
       <form className={classes.modalForm}>
