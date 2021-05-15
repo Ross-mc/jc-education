@@ -9,7 +9,6 @@ const Modal = () => {
   return (
     <>
     <div className={classes.modal}>
-      <h1>Modal</h1>
       <h1>{modalCtx.courseTitle}</h1>
     </div>
     <Overlay />

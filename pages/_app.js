@@ -14,9 +14,13 @@ function MyApp({ Component, pageProps }) {
     setDisplayModal(!displayModal)
   }
 
+  const updateTitle = (title) => {
+    setCourseTitle(title)
+  }
+
   return (
     // <Provider session={pageProps.session}>
-    <ModalCtx.Provider value={{displayModal, toggleModal, courseTitle}}>
+    <ModalCtx.Provider value={{displayModal, toggleModal, courseTitle, updateTitle}}>
     <Layout>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>

@@ -8,7 +8,7 @@ const Card = ({course}) =>{
 
   const enquireHandler = () => {
     modalCtx.toggleModal();
-    modalCtx.courseTitle = course.title;
+    modalCtx.updateTitle(course.title)
   }
 
    return (
