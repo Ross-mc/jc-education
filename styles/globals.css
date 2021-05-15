@@ -79,6 +79,8 @@ h1,h2{
   margin: 1rem;
   border-radius: .5rem;
   border: none;
+  cursor: pointer;
+  font-family: var(--font-dosis);
 }
 
 .btn:hover, .btn:focus{

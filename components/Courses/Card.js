@@ -17,7 +17,9 @@ const Card = ({course}) =>{
        <h3>{course.price}</h3>
        <p>{course.brief}</p>
        <a href={course.details} target="_blank" rel="noreferrer" className="btn">More Details</a>
-       <button className="btn" onClick={enquireHandler}>Enquire</button>
+       <div>
+       <button className="btn" style={{margin: "1rem auto", fontFamily: "var(--font-dosis)", fontSize: "16px", width: "35%", padding: ".5rem"}} onClick={enquireHandler}>Enquire</button>
+       </div>
      </div>
    )
 }
