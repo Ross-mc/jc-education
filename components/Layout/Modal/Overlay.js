@@ -1,7 +1,11 @@
-import classes from "./modal.module.css"
+import { useContext } from "react";
+import ModalCtx from "../../../store/modalCtx";
+import classes from "./modal.module.css";
+
 
 const Overlay = () => {
-  return <div className={classes.overlay}></div>
+  const modalCtx = useContext(ModalCtx);
+  return <div className={classes.overlay} onClick={modalCtx.toggleModal}></div>
 }
 
 export default Overlay

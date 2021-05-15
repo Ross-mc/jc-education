@@ -1,11 +1,22 @@
 import Head from "next/head"
+import { useState } from "react"
 import Layout from "../components/Layout/Layout"
+import ModalCtx from "../store/modalCtx"
 import '../styles/globals.css'
 // import {Provider} from "next-auth/client"
 
 function MyApp({ Component, pageProps }) {
+
+  const [displayModal, setDisplayModal] = useState(null);
+  const [courseTitle, setCourseTitle] = useState("");
+
+  const toggleModal = () => {
+    setDisplayModal(!displayModal)
+  }
+
   return (
     // <Provider session={pageProps.session}>
+    <ModalCtx.Provider value={{displayModal, toggleModal, courseTitle}}>
     <Layout>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -17,6 +28,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
     </Layout>
+    </ModalCtx.Provider>
     // {/* </Provider> */}
   
   )

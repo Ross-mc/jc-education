@@ -1,8 +1,9 @@
 import Footer from "./Footer";
 import Navigation from "./Navigation";
 import { isDesktop } from "react-device-detect";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Modal from "./Modal/Modal";
+import ModalCtx from "../../store/modalCtx";
 
 const Layout = ({ children }) => {
   const minHeight = isDesktop ? "75" : "73";
@@ -17,6 +18,8 @@ const Layout = ({ children }) => {
     });
   });
 
+  const modalCtx = useContext(ModalCtx);
+
   return (
     <div className="wrapper">
       <Navigation />
@@ -29,7 +32,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-      <Modal />
+      {modalCtx.displayModal && <Modal />}
       <Footer />
     </div>
   );
