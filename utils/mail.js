@@ -6,6 +6,7 @@ const transport = nodemailer.createTransport({
     user: process.env.OUTLOOK_ADDRESS,
     pass: process.env.OUTLOOK_PASSWORD,
   },
+  from: process.env.OUTLOOK_ADDRESS,
 });
 
 export default async function sendEmail(recipient, subject, html) {

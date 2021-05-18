@@ -28,7 +28,9 @@ export default {
     <h1>Hi ${customerName},</h1>
     <p>Thank you for your enquiry regarding ${courseTitle}.</p>
     <p>I'll be in touch shortly with more information.</p>
+    <br />
     <p><strong>Jacki</strong></p>
+    <br />
     <p><small>This is an automated email, please do not reply</small></p>
   </div>
   `
