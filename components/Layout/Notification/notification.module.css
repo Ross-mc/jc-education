@@ -1,0 +1,34 @@
+.success, .failure{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 5rem;
+  animation: moveUp 3000ms normal ease-in;
+  transform-origin: top center;
+  font-size: larger;
+  z-index: 900;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(5rem);
+  }
+  15% {
+    transform: translateY(0);
+  }
+  85%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5rem);
+  }
+}
+
+.success {
+  background-color: #2ecc71;
+}
+
+.failure{
+  background-color: #e74c3c;
+  color: #ecf0f1;
+}

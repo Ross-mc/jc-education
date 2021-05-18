@@ -4,6 +4,8 @@ import { isDesktop } from "react-device-detect";
 import { useContext, useEffect } from "react";
 import Modal from "./Modal/Modal";
 import ModalCtx from "../../store/modalCtx";
+import Notification from "./Notification";
+import NotificationCtx from "../../store/notificationCtx";
 
 const Layout = ({ children }) => {
   const minHeight = isDesktop ? "75" : "73";
@@ -19,6 +21,7 @@ const Layout = ({ children }) => {
   });
 
   const modalCtx = useContext(ModalCtx);
+  const notificationCtx = useContext(NotificationCtx)
 
   return (
     <div className="wrapper">
@@ -33,6 +36,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       {modalCtx.displayModal && <Modal />}
+      {notificationCtx.displayNotification && <Notification />}
       <Footer />
     </div>
   );

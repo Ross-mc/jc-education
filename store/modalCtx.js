@@ -4,7 +4,7 @@ const ModalCtx = createContext({
   displayModal: false,
   toggleModal: () => {},
   courseTitle: "",
-  updateTitle: ""
+  updateTitle: () => {}
 });
 
 export default ModalCtx;

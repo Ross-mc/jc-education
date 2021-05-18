@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 // import { signIn, useSession, getSession  } from "next-auth/client";
 import { useRouter } from "next/router";
 
 import LoginForm from "./LoginForm";
 import BlogForm from "./BlogForm";
+import NotificationCtx from "../../store/notificationCtx";
 
 const Admin = () => {
   //login form refs
@@ -20,6 +21,8 @@ const Admin = () => {
   const titleRef = useRef("");
   const contentRef = useRef("");
   const [images, setImages] = useState([]);
+
+  const notificationCtx = useContext(NotificationCtx);
 
   const fileToDataUri = (image) => {
     return new Promise((res) => {
@@ -99,9 +102,19 @@ const Admin = () => {
         setLoggedIn(true);
         const data = await result.json();
         setUser(data.user);
+
+      } else {
+        notificationCtx.updateNotification("Invalid Login Credentials", false)
+        // notificationCtx.toggleNotification();
+        notificationCtx.toggleNotification()
       }
     } catch (error) {
       console.log(error);
+      notificationCtx.updateNotification({
+        text: "Internal Server Error",
+        success: false
+      })
+      notificationCtx.toggleNotification();
     }
   };
 
