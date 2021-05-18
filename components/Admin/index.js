@@ -104,9 +104,8 @@ const Admin = () => {
         setUser(data.user);
 
       } else {
-        notificationCtx.updateNotification("Invalid Login Credentials", false)
-        // notificationCtx.toggleNotification();
-        notificationCtx.toggleNotification()
+        notificationCtx.updateNotification("Invalid Login Credentials", false);
+        notificationCtx.toggleNotification();
       }
     } catch (error) {
       console.log(error);
@@ -121,13 +120,18 @@ const Admin = () => {
   const submitBlogPost = async (e) => {
     e.preventDefault();
     //validate user inputs
+    if (!titleRef.current.value.trim() || !contentRef.current.value.trim()){
+      notificationCtx.updateNotification("Blog Post missing Title or Content", false);
+      notificationCtx.toggleNotification();
+      return
+    }
     let base64Img = "placeholder"
     if (images.length > 0){
       base64Img = images[0].base64
     }
     const newBlogPost = {
-      title: titleRef.current.value,
-      text: contentRef.current.value,
+      title: titleRef.current.value.trim(),
+      text: contentRef.current.value.trim(),
       base64Img,
     }
 
@@ -139,7 +143,13 @@ const Admin = () => {
       },
       body: JSON.stringify(newBlogPost)
     })
-    const response = await result.json();
+    if (result.ok){
+      notificationCtx.updateNotification("Success! Blog Post was saved!", true);
+      notificationCtx.toggleNotification();
+    } else {
+      notificationCtx.updateNotification("Error connecting with database. Please try again later", false);
+      notificationCtx.toggleNotification();
+    }
 
 
   };
