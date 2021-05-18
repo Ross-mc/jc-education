@@ -21,9 +21,9 @@ export default async (req, res) => {
   }
 
   const customerTemplate = htmlTemplate.toCustomer(customerName, courseTitle);
-  sendEmail(customerEmail, `Your Enquiry for ${courseTitle}`, customerTemplate);
+  await sendEmail(customerEmail, `Your Enquiry for ${courseTitle}`, customerTemplate);
   const businessTemplate = htmlTemplate.toBusiness(customerName, customerEmail, customerPhone, comments, courseTitle);
-  sendEmail(process.env.OUTLOOK_ADDRESS, `New Enquiry for ${courseTitle}`, businessTemplate);
+  await sendEmail(process.env.OUTLOOK_ADDRESS, `New Enquiry for ${courseTitle}`, businessTemplate);
 
   return res.json({message: "Emails sent"});
 

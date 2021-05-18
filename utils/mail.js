@@ -8,20 +8,27 @@ const transport = nodemailer.createTransport({
   },
 });
 
-export default function sendEmail(recipient, subject, html) {
+export default async function sendEmail(recipient, subject, html) {
+  return new Promise((resolve, reject) => {
   const mailOptions = {
     from: process.env.OUTLOOK_ADDRESS,
     to: recipient,
     subject,
     generateTextFromHTML: true,
-    html
+    html,
   };
 
   transport.sendMail(mailOptions, (err, res) => {
     if (err) {
       console.log(err);
+      transport.close();
+      resolve(false)
     } else {
       console.log(res);
+      transport.close();
+      resolve(true)
     }
   });
+  })
+
 }
