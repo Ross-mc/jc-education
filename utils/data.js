@@ -6,10 +6,6 @@ const titleCard = {
     {
       company: "Sweet Squared",
       href: "https://www.sweetsquared.com/"
-    },
-    {
-      company: "Creative Academy Manchester",
-      href: "https://www.creativeacademymanchester.co.uk/"
     }
   ],
   tagline: "Specialist in Beauty Education for brands including CND, Lecentè, wax:one, Light Elegance, LashUS and more"

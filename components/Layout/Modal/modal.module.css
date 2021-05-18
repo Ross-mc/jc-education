@@ -1,10 +1,10 @@
 .modal {
-  width: 90%;
+  width: 98%;
   max-width: 550px;
   position: fixed;
   z-index: 20;
   top: 10%;
-  background-color: var(--color-offwhite);
+  /* background-color: var(--color-offwhite); */
   left: 50%;
   transform: translateX(-50%);
   padding: 2rem;
@@ -25,7 +25,7 @@
 }
 
 .modalForm {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   max-width: 500px;
   background-color: var(--color-grey-200);
@@ -34,13 +34,32 @@
   align-items: center;
   justify-content: center;
   color: var(--color-primary-500);
-  box-shadow: 0 0 5px var(--color-grey-400);
+  box-shadow: 0 0 8px var(--color-grey-900);
   gap: 0.5rem;
+  border-radius: 4px;
 }
 
 .modalForm input,
 .modalForm textarea{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.modalForm label{
+  width: 80%;
+  text-align: left;
+}
+
+.modalForm input{
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  text-align: left;
+  border-bottom: 3px solid var(--color-primary-500);
+  color: var(--color-primary-500)
+}
+
+.modalForm input:focus{
+  outline: none;
 }
 
 .modalTitle {
@@ -70,8 +89,8 @@
 
 .icon {
   position: absolute;
-  top: -3rem;
-  right: 1rem;
+  top: -.5rem;
+  right: 3rem;
   cursor: pointer;
   color: var(--color-primary-500);
 }
