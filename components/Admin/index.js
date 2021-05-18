@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import LoginForm from "./LoginForm";
 import BlogForm from "./BlogForm";
 import NotificationCtx from "../../store/notificationCtx";
+import Loading from "../Loading";
 
 const Admin = () => {
   //login form refs
@@ -75,7 +76,9 @@ const Admin = () => {
   if (loading) {
     return (
       <section>
-        <h1>Loading....</h1>
+        <div style={{ width: "50%", margin: "0 auto" }}>
+          <Loading />
+        </div>
       </section>
     );
   }
@@ -85,6 +88,8 @@ const Admin = () => {
 
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
+
+    setLoading(true);
 
     try {
       const result = await fetch("/api/auth/login", {
@@ -102,7 +107,6 @@ const Admin = () => {
         setLoggedIn(true);
         const data = await result.json();
         setUser(data.user);
-
       } else {
         notificationCtx.updateNotification("Invalid Login Credentials", false);
         notificationCtx.toggleNotification();
@@ -111,47 +115,55 @@ const Admin = () => {
       console.log(error);
       notificationCtx.updateNotification({
         text: "Internal Server Error",
-        success: false
-      })
+        success: false,
+      });
       notificationCtx.toggleNotification();
     }
+    setLoading(false);
   };
 
   const submitBlogPost = async (e) => {
     e.preventDefault();
     //validate user inputs
-    if (!titleRef.current.value.trim() || !contentRef.current.value.trim()){
-      notificationCtx.updateNotification("Blog Post missing Title or Content", false);
+    if (!titleRef.current.value.trim() || !contentRef.current.value.trim()) {
+      notificationCtx.updateNotification(
+        "Blog Post missing Title or Content",
+        false
+      );
       notificationCtx.toggleNotification();
-      return
+      return;
     }
-    let base64Img = "placeholder"
-    if (images.length > 0){
-      base64Img = images[0].base64
+    let base64Img = "placeholder";
+    if (images.length > 0) {
+      base64Img = images[0].base64;
     }
     const newBlogPost = {
       title: titleRef.current.value.trim(),
       text: contentRef.current.value.trim(),
       base64Img,
-    }
+    };
+
+    setLoading(true);
 
     //wrap api call in try catch
     const result = await fetch("/api/blog", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newBlogPost)
-    })
-    if (result.ok){
+      body: JSON.stringify(newBlogPost),
+    });
+    setLoading(false);
+    if (result.ok) {
       notificationCtx.updateNotification("Success! Blog Post was saved!", true);
       notificationCtx.toggleNotification();
     } else {
-      notificationCtx.updateNotification("Error connecting with database. Please try again later", false);
+      notificationCtx.updateNotification(
+        "Error connecting with database. Please try again later",
+        false
+      );
       notificationCtx.toggleNotification();
     }
-
-
   };
 
   return (
@@ -170,6 +182,11 @@ const Admin = () => {
           usernameRef={usernameRef}
           passwordRef={passwordRef}
         />
+      )}
+      {loading && (
+        <div style={{ width: "50%", margin: "0 auto" }}>
+          <Loading />
+        </div>
       )}
     </section>
   );

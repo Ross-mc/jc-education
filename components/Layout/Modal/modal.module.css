@@ -3,7 +3,7 @@
   max-width: 550px;
   position: fixed;
   z-index: 20;
-  top: 10%;
+  top: 0%;
   /* background-color: var(--color-offwhite); */
   left: 50%;
   transform: translateX(-50%);

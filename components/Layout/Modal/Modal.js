@@ -1,4 +1,4 @@
-import {useRef} from "react"
+import { useRef, useState } from "react";
 import Overlay from "./Overlay";
 import classes from "./modal.module.css";
 import { useContext } from "react";
@@ -8,6 +8,7 @@ import icons from "../../../icons";
 import { isDesktop } from "react-device-detect";
 import { validateEnquiry } from "../../../utils/htmlTemplates/validateEnquiry";
 import NotificationCtx from "../../../store/notificationCtx";
+import Loading from "../../Loading";
 
 const Modal = () => {
   const emailInputRef = useRef("");
@@ -15,6 +16,7 @@ const Modal = () => {
   const lastNameInputRef = useRef("");
   const phoneNumberInputRef = useRef("");
   const commentsInputRef = useRef("");
+  const [loading, setLoading] = useState(false);
 
   const mobileScrollableStyle = {
     maxHeight: "calc(100vh - 80px)",
@@ -24,7 +26,7 @@ const Modal = () => {
   const notificationCtx = useContext(NotificationCtx);
 
   const submitEnquiry = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const email = emailInputRef.current.value.trim();
     const firstName = firstNameInputRef.current.value.trim();
     const lastName = lastNameInputRef.current.value.trim();
@@ -35,7 +37,7 @@ const Modal = () => {
       //some error notifacation on the front end
       return;
     }
-
+    setLoading(true);
     const response = await fetch("/api/enquire", {
       method: "POST",
       headers: {
@@ -49,15 +51,19 @@ const Modal = () => {
         courseTitle: modalCtx.courseTitle,
       }),
     });
-
-    if (response.ok){
+    setLoading(false);
+    if (response.ok) {
       //display success notification
-      notificationCtx.updateNotification("Enquiry Submitted", true)
+      notificationCtx.updateNotification("Enquiry Submitted", true);
     } else {
       //display error notification
-      notificationCtx.updateNotification("Error submitting enquiry. Please try again. We are sorry for the inconvenience", false);
+      notificationCtx.updateNotification(
+        "Error submitting enquiry. Please try again. We are sorry for the inconvenience",
+        false
+      );
     }
-    notificationCtx.toggleNotification()
+
+    notificationCtx.toggleNotification();
   };
 
   const modalCtx = useContext(ModalCtx);
@@ -74,11 +80,16 @@ const Modal = () => {
         <form className={classes.modalForm} onSubmit={submitEnquiry}>
           <h3>{modalCtx.courseTitle}</h3>
           <label htmlFor="email">Email</label>
-          <input type="email" required name="email" ref={emailInputRef}/>
+          <input type="email" required name="email" ref={emailInputRef} />
           <label htmlFor="first-name">First Name</label>
-          <input type="text" name="first-name" required ref={firstNameInputRef}/>
+          <input
+            type="text"
+            name="first-name"
+            required
+            ref={firstNameInputRef}
+          />
           <label htmlFor="last-name">Last Name</label>
-          <input type="text" name="last-name" required ref={lastNameInputRef}/>
+          <input type="text" name="last-name" required ref={lastNameInputRef} />
           <label htmlFor="phone">Phone Number</label>
           <input
             type="tel"
@@ -90,10 +101,16 @@ const Modal = () => {
           <label htmlFor="comments">
             Comments - <em>Optional</em>
           </label>
-          <textarea name="comments" cols="30" rows="10" ref={commentsInputRef}></textarea>
+          <textarea
+            name="comments"
+            cols="30"
+            rows="10"
+            ref={commentsInputRef}
+          ></textarea>
           <button className="btn" style={{ width: "80%", maxWidth: "150px" }}>
             Submit Enquiry
           </button>
+          {loading && <Loading />}
         </form>
       </div>
       <Overlay />
