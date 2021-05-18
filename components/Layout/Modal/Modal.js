@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import icons from "../../../icons";
 import { isDesktop } from "react-device-detect";
 import { validateEnquiry } from "../../../utils/htmlTemplates/validateEnquiry";
+import NotificationCtx from "../../../store/notificationCtx";
 
 const Modal = () => {
   const emailInputRef = useRef("");
@@ -19,6 +20,8 @@ const Modal = () => {
     maxHeight: "calc(100vh - 80px)",
     overflowY: "auto",
   };
+
+  const notificationCtx = useContext(NotificationCtx);
 
   const submitEnquiry = async (e) => {
     e.preventDefault()
@@ -49,11 +52,12 @@ const Modal = () => {
 
     if (response.ok){
       //display success notification
-      console.log("Syucces")
+      notificationCtx.updateNotification("Enquiry Submitted", true)
     } else {
       //display error notification
-      console.log("Fail")
+      notificationCtx.updateNotification("Error submitting enquiry. Please try again. We are sorry for the inconvenience", false);
     }
+    notificationCtx.toggleNotification()
   };
 
   const modalCtx = useContext(ModalCtx);
