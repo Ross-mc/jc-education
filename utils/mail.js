@@ -8,8 +8,6 @@ const transport = nodemailer.createTransport({
   },
 });
 
-
-
 export default function sendEmail(recipient, subject, html) {
   const mailOptions = {
     from: process.env.OUTLOOK_ADDRESS,

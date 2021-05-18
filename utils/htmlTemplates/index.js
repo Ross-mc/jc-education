@@ -33,7 +33,7 @@ export default {
   </div>
   `
   },
-  toBusiness: (customerName, customerEmail, customerPhone, comments, courseTitle, ) => {
+  toBusiness: (customerName, customerEmail, customerPhone, comments, courseTitle) => {
     return `<style>
     body{
       margin: 0 auto;
