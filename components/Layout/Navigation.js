@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import classes from "./navigation.module.css"
+import data from "../../utils/data";
 
 const Navigation = () => {
   const navigationLinks = [
@@ -16,15 +17,21 @@ const Navigation = () => {
       text: "About"
     },
     {
-      href: "/blog",
-      text: "Blog"
+      text: "Brands"
     },
     {
-      href: "/contact",
-      text: "Contact"
+      href: "/blog",
+      text: "Blog"
     }
-  ]
+  ];
 
+  const brandLinks = Object.keys(data.brands).map(key => {
+    const brandName = data.brands[key].name;
+    return {
+      href: `/brands/${brandName.toLowerCase()}`,
+      text: brandName
+    }
+  });
   return (
     <header className={classes.header}>
       <Link href="/">
@@ -34,7 +41,7 @@ const Navigation = () => {
       </Link>
       <nav>
         <ul>
-          {isDesktop ? <DesktopNav items={navigationLinks}/> : <MobileNav items={navigationLinks}/>}
+          {isDesktop ? <DesktopNav items={navigationLinks} brandLinks={brandLinks}/> : <MobileNav items={navigationLinks} brandLinks={brandLinks}/>}
         </ul>
       </nav>
     </header>

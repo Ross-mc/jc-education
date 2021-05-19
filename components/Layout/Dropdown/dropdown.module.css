@@ -15,8 +15,8 @@
 
 .link a {
   color: var(--color-primary-500);
-  font-size: var(--size-8);
-  line-height: var(--size-8);
+  font-size: var(--size-6);
+  line-height: var(--size-6);
   padding: 1rem;
   text-decoration: none;
 }

@@ -1,25 +1,37 @@
-import Courses from "../components/Courses";
+import Link from "next/link";
 import Landing from "../components/Landing/Landing";
-import data from "../utils/data"
+import data from "../utils/data";
 
 const Home = (props) => {
+  const { brands, titleCard, blurb } = props;
+  const brandKeys = Object.keys(brands);
+
   return (
     <>
-      <Landing titleCard={props.titleCard} blurb={props.blurb}/>
-      <Courses courses={props.courses}/>
+      <Landing titleCard={titleCard} blurb={blurb} />
+      <h1 style={{fontSize: "2em"}}>Brands</h1>
+      <div className="brandContainer">
+        {brandKeys.map((key) => {
+          const brandName = brands[key].name;
+          return (
+            <Link href={`/brands/${brandName.toLowerCase()}`} key={brandName}>
+              <a className="brandLink">{brandName.toUpperCase()}</a>
+            </Link>
+          );
+        })}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
-export function getStaticProps(){
-
+export function getStaticProps() {
   return {
     props: {
       titleCard: data.titleCard,
       blurb: data.blurb,
-      courses: data.courses
-    }
-  }
+      brands: data.brands,
+    },
+  };
 }
