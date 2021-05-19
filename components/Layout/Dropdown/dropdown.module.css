@@ -33,3 +33,25 @@
     transform: rotateX(0deg)
   }
 }
+
+.brands{
+
+  background-color: var(--color-grey-200);
+  animation: brandDrop 300ms ease-in-out forwards;
+  transform-origin: top center;
+  width: 150%;
+  margin-left: -25%;
+}
+
+.brands a {
+  color: var(--color-primary-300);
+}
+
+@keyframes brandDrop {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  100% {
+    transform: rotateX(0deg)
+  }
+}
