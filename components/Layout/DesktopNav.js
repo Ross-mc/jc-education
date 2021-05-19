@@ -1,8 +1,16 @@
 import Link from "next/link";
+import { useState } from "react";
 import classes from "./navigation.module.css";
 import Tooltip from "./Tooltip";
 
 const DesktopNav = ({ items, brandLinks }) => {
+  const [displayTooltip, setDisplayTooltip] = useState(false);
+
+  const toggleTooltip = () => {
+    setDisplayTooltip(!displayTooltip)
+  }
+
+
   return (
     <>
       {items.map((item) => {
@@ -12,10 +20,11 @@ const DesktopNav = ({ items, brandLinks }) => {
               {item.href ? (
                 <Link href={item.href}>{item.text}</Link>
               ) : (
-                <>
-                <p>{item.text}</p>
-                <Tooltip brandLinks={brandLinks}/>
-                </>
+                <div onClick={toggleTooltip}>
+                <p style={{cursor: "pointer"}}>{item.text}</p>
+                {displayTooltip && <Tooltip brandLinks={brandLinks} toggleTooltip={toggleTooltip}/>}
+                
+                </div>
               )}
             </div>
           </li>

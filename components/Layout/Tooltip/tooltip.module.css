@@ -1,0 +1,29 @@
+.container{
+  position: absolute;
+  background-color: var(--color-grey-200);
+  margin: 0 -2.2rem;
+  top: 10vh;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: rotateDropdown 400ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.item{
+  width: 100%;
+}
+
+@keyframes rotateDropdown {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  70% {
+    transform: rotateX(20deg)
+  }
+  100% {
+    transform: rotateX(0deg)
+  }
+}
