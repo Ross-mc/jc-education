@@ -17,7 +17,7 @@ const Dropdown = ({ items, brandLinks }) => {
               {item.href ? (
                 <DropdownLink href={item.href} text={item.text} />
               ) : (
-                <div className={classes.link} onClick={toggleBrands}>
+                <div onClick={toggleBrands}>
                   <p id="brands">{item.text}</p>
                   {displayBrands && (
                     <div className={classes.brands}>
