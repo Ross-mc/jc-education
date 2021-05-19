@@ -13,7 +13,7 @@
   padding: 1rem;
 }
 
-.link a {
+.link a, .link p {
   color: var(--color-primary-500);
   font-size: var(--size-6);
   line-height: var(--size-6);

@@ -1,40 +1,47 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";
-import icons from "../../icons"
+import icons from "../../icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classes from "./navigation.module.css"
+import classes from "./navigation.module.css";
 
-
-const MobileNav = ({items}) => {
-  const [isDropdown, setIsDropdown] = useState(false)
+const MobileNav = ({ items, brandLinks }) => {
+  const [isDropdown, setIsDropdown] = useState(false);
 
   const toggleDropdown = () => {
-    setIsDropdown(!isDropdown)
-  }
+    setIsDropdown(!isDropdown);
+  };
 
   const bodyDropdownToggler = (e) => {
-    if (isDropdown){
-      setIsDropdown(false)
+    console.log(e);
+    if (
+      (typeof e.target.className === "string" &&
+        e.target.className.startsWith("dropdown-link")) ||
+      e.target.id === "brands"
+    ) {
+      return;
     }
-  }
+    if (isDropdown) {
+      setIsDropdown(false);
+    }
+  };
 
   useEffect(() => {
     document.addEventListener("click", bodyDropdownToggler);
 
     return () => {
-      document.removeEventListener("click", bodyDropdownToggler)
-    }
-  })
-  
+      document.removeEventListener("click", bodyDropdownToggler);
+    };
+  });
+
   return (
     <>
       <div className={classes.icon} onClick={toggleDropdown} id="icon">
-      <p style={{visibility: "hidden"}}>hello</p>
-        <FontAwesomeIcon icon={isDropdown ? icons.close : icons.bars}  />
+        <p style={{ visibility: "hidden" }}>hello</p>
+        <FontAwesomeIcon icon={isDropdown ? icons.close : icons.bars} />
       </div>
-      {isDropdown && <Dropdown items={items}/>}
+      {isDropdown && <Dropdown items={items} brandLinks={brandLinks} />}
     </>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;
