@@ -12,7 +12,6 @@ const MobileNav = ({ items, brandLinks }) => {
   };
 
   const bodyDropdownToggler = (e) => {
-    console.log(e);
     if (
       (typeof e.target.className === "string" &&
         e.target.className.startsWith("dropdown-link")) ||
