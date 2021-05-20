@@ -16,7 +16,7 @@ const blurb =
   "Jacki started in the beauty industry by completing Beauty Therapy Levels 2&3 at college aged 21 before working in a salon for 10 years where she was introduced to CND. Completing her Brisa Gel Beginners in 2015 created a passion for nails and a thirst for the knowledge starting a journey to achieving her CND Grand Master qualification in 2018. Jacki also loves the ever growing lash sector of the industry and now passes on her knowledge and skills as part of the LASHUS Education Team.";
 
 const brands = {
-  CND: {
+  cnd: {
     name: "CND",
     blurb: [
       "Through the courses and workshops of its Creative Academy, to its respected master technician programs, CND™ has advanced the state of the industry through education. Over the years, CND™, has earned a reputation as the most user-friendly, knowledgeable, and well-equipped educational resource in the industry.",
@@ -61,7 +61,7 @@ const brands = {
     ],
     image: "/images/cnd-shellac.jpg"
   },
-  LASHUS: {
+  lashus: {
     name: "LASHUS",
     blurb: [
       "LASHUS is the premium lash lifting and extension brand that is making waves in the industry.",
