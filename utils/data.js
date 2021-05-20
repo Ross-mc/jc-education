@@ -181,30 +181,43 @@ const brands = {
   "wax:one": {
     name: "wax:one",
     blurb: [
-      "LASHUS is the premium lash lifting and extension brand that is making waves in the industry.",
-      "The brand was developed, crafted and delivered to the market by a team with a combination of 50 years experience in the professional lash treatment industry. By collaborating with best-in-class chemists, laboratories, raw ingredient suppliers and educators, we have developed products and techniques that rewrite the rule book and exceed expectations.",
+      "Proudly developed and manufactured in the UK, wax:one was developed by a team with beauty industry experience spanning decades. Every pitfall and flaw encountered during traditional waxing treatment was investigated, and a solution developed within the wax:one range and technique.",
+      "The brand’s ethos of simplicity, efficacy and innovation runs through its streamlined range of products which are all designed to suit any area and deliver exceptional results on even the shortest of hairs and promises to be the most pain free hair removal system on the market. ",
     ],
     courses: [
       {
-        title: "LASH GRAD",
+        title: "Wax:one Beginners",
         brief:
-          "Become a LASH GRAD in just one day, suitable for beginners and conversion, learn techniques for applying single lashes and pre-made fans to create classic and hybrid looks.",
-        price: "£350+vat / €420",
-        details: "https://my.sweetsquared.com/education/course/361",
+          "During this 2 day course, you will understand the fundamentals of wax:one, taking you step by step through each wax treatment to ensure you wax like a true wax:one waxer.  Areas covered are face with hot wax, legs with strip wax, underarms with hot wax and bikini using hot wax.",
+        price: "£425.00+VAT / €510.00",
+        details: "https://my.sweetsquared.com/education/course/202",
       },
       {
-        title: "LashUS The Lift",
+        title: "Wax:one Beginner Full Works",
         brief:
-          "With Lash Lifts becoming one of the fastest growing beauty treatments around , and clients looking everywhere for trained technicians isn’t it about time you learned to turn it up and become one of US.",
-        price: "£295.00 + VAT / €354.00",
-        details: "https://my.sweetsquared.com/education/course/260",
+          "During this day course, you will understand the fundamentals of wax:one, taking you step by step through each wax treatment to ensure you wax like a true wax:one waxer.",
+        price: "£100+VAT / €120",
+        details: "https://my.sweetsquared.com/education/course/204",
       },
       {
-        title: "LashUS Master Volume",
+        title: "Wax:one Male Grooming",
         brief:
-          "Become a LASHUS Extension Master in just 1 day. Learn advanced techniques and enhance your skill to Master level by creating stunning volume hand made fans!",
-        price: "£299+vat / €358 ",
-        details: "https://my.sweetsquared.com/education/course/390",
+          "Become the ultimate wax:one waxer with this 1 day course and enhance your Male waxing business potential to the max!",
+        price: "£175.00+VAT / €210.00",
+        details: "https://my.sweetsquared.com/education/course/205",
+      },
+      {
+        title: "Wax:one Conversion",
+        brief:
+          "Conversion class for Pro Waxers! Convert to the ultimate wax:one brand, the latest innovation in professional waxing.",
+        price: "£200.00+VAT / €240.00",
+        details: "https://my.sweetsquared.com/education/course/203",
+      },      {
+        title: "Wax:one Male Intimate",
+        brief:
+          "Become the ultimate wax:one waxer with this 1 day course and enhance your Male waxing business potential to the max!",
+        price: "£305.00+VAT / €366.00  ",
+        details: "https://my.sweetsquared.com/education/course/206",
       },
     ],
     image: "/images/waxone.jpg"
