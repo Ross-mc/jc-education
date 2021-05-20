@@ -1,4 +1,4 @@
-import Hero from "../components/Brand/hero";
+import Hero from "../components/Brand/Hero";
 import Landing from "../components/Landing/Landing";
 import data from "../utils/data";
 
