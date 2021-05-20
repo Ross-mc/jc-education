@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 10%;
-  background-color: var(--color-grey-100);
+  background-color: var(--color-primary-500);
   box-shadow: 0 0 10px var(--color-primary-100);
   flex-direction: column;
   z-index: 5;
@@ -27,14 +27,14 @@
 
 
 .list a path{
-  color: var(--color-primary-500);
+  color: var(--color-primary-100);
   margin-left: 10px;
 }
 
 .footer small{
-  color: var(--color-grey-300);
+  color: var(--color-grey-200);
 }
 
 .footer small a {
-  color: var(--color-grey-700);
+  color: var(--color-grey-300);
 }

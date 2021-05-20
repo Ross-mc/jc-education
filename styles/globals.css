@@ -5,15 +5,15 @@ body {
   padding: 0;
   margin: 0;
 
-  --color-primary-100: hsl(334, 82%, 90%);
-  --color-primary-200: hsl(334, 82%, 80%);
-  --color-primary-300: hsl(334, 82%, 70%);
-  --color-primary-400: hsl(334, 82%, 60%);
-  --color-primary-500: hsl(334, 82%, 50%);
-  --color-primary-600: hsl(334, 82%, 40%);
-  --color-primary-700: hsl(334, 82%, 30%);
-  --color-primary-800: hsl(334, 82%, 20%);
-  --color-primary-900: hsl(334, 82%, 10%);
+  --color-primary-100: hsl(198, 67%, 80%);
+  --color-primary-200: hsl(198, 67%, 70%);
+  --color-primary-300: hsl(198, 67%, 55%);
+  --color-primary-400: hsl(198, 67%, 40%);
+  --color-primary-500: hsl(198, 67%, 27%);
+  --color-primary-600: hsl(198, 67%, 20%);
+  --color-primary-700: hsl(198, 67%, 15%);
+  --color-primary-800: hsl(198, 67%, 10%);
+  --color-primary-900: hsl(198, 67%, 8%);
 
   --color-grey-100: hsl(265, 50%, 95%);
   --color-grey-200: hsl(265, 5%, 85%);

@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   top: 10vh;
-  background-color: var(--color-grey-300);
+  background-color: var(--color-grey-200);
   animation: rotateDropdown 600ms ease-in-out forwards;
   transform-origin: top center;
 }
@@ -14,7 +14,7 @@
 }
 
 .link a, .link p {
-  color: var(--color-primary-500);
+  color: var(--color-primary-400);
   font-size: 1.5rem;
   line-height: 3rem;
   text-decoration: none;

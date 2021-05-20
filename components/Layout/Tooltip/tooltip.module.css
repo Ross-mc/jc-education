@@ -1,6 +1,6 @@
 .container{
   position: absolute;
-  background-color: var(--color-grey-200);
+  background-color: var(--color-primary-300);
   margin: 0 -2.2rem;
   top: 10vh;
   padding: 0.5rem 2rem;
@@ -15,11 +15,11 @@
 .item{
   width: 170%;
   margin-left: -35%;
-  background-color: var(--color-grey-200);
+  background-color: var(--color-primary-300);
 }
 
 .item:hover{
-  background-color: var(--color-grey-100);
+  background-color: var(--color-primary-100);
 }
 
 @keyframes rotateDropdown {

@@ -1,6 +1,6 @@
 const titleCard = {
   name: "JC Beauty Training",
-  role: "Nail & Beauty Education",
+  role: "Nail & Beauty Education by Jacki Clarke",
   image: "/images/jacki-clarke.jpg",
   links: [
     {
