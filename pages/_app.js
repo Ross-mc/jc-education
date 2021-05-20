@@ -39,7 +39,6 @@ function MyApp({ Component, pageProps }) {
   };
 
   return (
-    // <Provider session={pageProps.session}>
     <ModalCtx.Provider
       value={{ displayModal, toggleModal, courseTitle, updateTitle }}
     >
@@ -60,17 +59,16 @@ function MyApp({ Component, pageProps }) {
             <meta charSet="UTF-8" />
             <meta http-httpequiv="X-UA-Compatible" content="IE=Edge" />
             <link rel="ico" href="/favicon.ico" />
-            <title>Jacki Clarke</title>
+            <title>JC Education</title>
             <meta
               name="description"
-              content="Jacki Clarke - CND Education Ambassador"
+              content=" - Nail & Beauty Training Courses by Jacki Clarke"
             />
           </Head>
           <Component {...pageProps} />
         </Layout>
       </NotificationCtx.Provider>
     </ModalCtx.Provider>
-    // {/* </Provider> */}
   );
 }
 
