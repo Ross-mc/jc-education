@@ -4,7 +4,7 @@ import classes from "./hero.module.css";
 const Hero = ({ brandName, image }) => {
   if (brandName) {
     return (
-      <Link href={`/brands/${brandName.toLowerCase()}`}>
+      <Link href={`/brands/${brandName.toLowerCase().replace(":", "")}`}>
         <div className={classes.hero}>
           <img src={image} alt={`${brandName} Hero`} />
           <p className={classes.centered}>{brandName}</p>

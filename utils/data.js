@@ -178,7 +178,7 @@ const brands = {
     ],
     image: "/images/light-elegance.jpg"
   },
-  "wax:one": {
+  "waxone": {
     name: "wax:one",
     blurb: [
       "Proudly developed and manufactured in the UK, wax:one was developed by a team with beauty industry experience spanning decades. Every pitfall and flaw encountered during traditional waxing treatment was investigated, and a solution developed within the wax:one range and technique.",
