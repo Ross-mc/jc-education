@@ -8,5 +8,6 @@
 .img img{
   width: 100%;
   height: auto;
-  max-width: 800px;
+  max-width: 600px;
+  box-shadow: 0 0 5px var(--color-grey-300);
 }
