@@ -28,7 +28,7 @@ const Navigation = () => {
   const brandLinks = Object.keys(data.brands).map(key => {
     const brandName = data.brands[key].name;
     return {
-      href: `/brands/${brandName.toLowerCase()}`,
+      href: `/brands/${brandName.toLowerCase().replace(":", "")}`,
       text: brandName
     }
   });
