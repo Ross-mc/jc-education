@@ -6,7 +6,7 @@ const Hero = ({brandName, image}) => {
     <Link href={`/brands/${brandName.toLowerCase()}`}>
     <div className={classes.hero}>
       <img src={image} alt={`${brandName} Hero`}/>
-      <p className={classes.centered}>{brandName}</p>
+      <p className={classes.centered}>{brandName}</p>      
     </div>
   </Link>
   )
