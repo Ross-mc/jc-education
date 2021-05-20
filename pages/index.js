@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Hero from "../components/Brand/hero";
 import Landing from "../components/Landing/Landing";
 import data from "../utils/data";
 
@@ -14,9 +14,7 @@ const Home = (props) => {
         {brandKeys.map((key) => {
           const brandName = brands[key].name;
           return (
-            <Link href={`/brands/${brandName.toLowerCase()}`} key={brandName}>
-              <a className="brandLink">{brandName.toUpperCase()}</a>
-            </Link>
+            <Hero brandName={brandName} key={brandName} image ={brands[key].image} />
           );
         })}
       </div>

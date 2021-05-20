@@ -1,0 +1,8 @@
+.hero img{
+  object-fit: cover;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+}
+
+/* {{objectFit: "cover", width:"100%", maxWidth: 400, height: 400} */

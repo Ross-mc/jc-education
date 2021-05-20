@@ -90,7 +90,7 @@ const brands = {
         details: "https://my.sweetsquared.com/education/course/390",
       },
     ],
-    image: "/images/cnd-shellac.jpg"
+    image: "/images/lashus.jpg"
   },
 };
 
