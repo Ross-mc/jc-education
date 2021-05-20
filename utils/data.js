@@ -44,37 +44,53 @@ const brands = {
         price: "£95.00 + VAT /€114.00",
         details: "https://my.sweetsquared.com/education/course/87",
       },
+      {
+        title: "CND Liquid & Powder Beginners",
+        brief:
+          "Over the duration of your 6-day course, we will be discussing and learning how to create beautiful, natural looking nail enhancements using Retention+™ Liquid and Powder in order to protect, strengthen and lengthen your future client's nails.",
+        price: "£625.00 + VAT / €750.00",
+        details: "https://my.sweetsquared.com/education/course/86",
+      },
+      {
+        title: "CND Pedicure Beginners",
+        brief:
+          "During this class, you will be provided with understanding and techniques to increase your pedicure service options with CND™ Spa. You will be able to upgrade your pedicure services with exfoliation and unique massage techniques. CND's 4 step system will allow you to customise services with a choice of fragrance and add-ons for personalised results.",
+        price: "£295.00+vat / €354.00",
+        details: "https://my.sweetsquared.com/education/course/152",
+      },
     ],
+    image: "/images/cnd-shellac.jpg"
   },
-  LashUs: {
+  LASHUS: {
     name: "LASHUS",
     blurb: [
-      "Through the courses and workshops of its Creative Academy, to its respected master technician programs, CND™ has advanced the state of the industry through education. Over the years, CND™, has earned a reputation as the most user-friendly, knowledgeable, and well-equipped educational resource in the industry.",
-      "Nail Professionals worldwide advocate that CND™, has increased their knowledge of products and procedures, enhancing their credibility with customers, and helping them to build stronger businesses. Among the hundreds of thousands of Nail Professionals who have benefited from CND™ educational programs, today more than 10,000 are certified Masters in either Liquid & Powder Enhancements, Gel Enhancements, or Natural Nail Care.",
+      "LASHUS is the premium lash lifting and extension brand that is making waves in the industry.",
+      "The brand was developed, crafted and delivered to the market by a team with a combination of 50 years experience in the professional lash treatment industry. By collaborating with best-in-class chemists, laboratories, raw ingredient suppliers and educators, we have developed products and techniques that rewrite the rule book and exceed expectations.",
     ],
     courses: [
       {
-        title: "CND™ Brisa Gel Beginners",
+        title: "LASH GRAD",
         brief:
-          "The CND™ Gel Beginners course will enable you to create thin, light natural looking enhancements using CND’s Brisa Gel. The pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-        price: "£725.00 + VAT / €870.00",
-        details: "https://my.sweetsquared.com/education/course/85",
+          "Become a LASH GRAD in just one day, suitable for beginners and conversion, learn techniques for applying single lashes and pre-made fans to create classic and hybrid looks.",
+        price: "£350+vat / €420",
+        details: "https://my.sweetsquared.com/education/course/361",
       },
       {
-        title: "CND™ Shellac™ Beginners",
+        title: "LashUS The Lift",
         brief:
-          "During this 2 day course, you will discover and learn the complete CND™ Shellac™ system and be well equipped with tips and tricks to provide the world's most wanted manicure to your future clients. Pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-        price: "£435.00 + VAT / €522",
-        details: "https://my.sweetsquared.com/education/course/84",
+          "With Lash Lifts becoming one of the fastest growing beauty treatments around , and clients looking everywhere for trained technicians isn’t it about time you learned to turn it up and become one of US.",
+        price: "£295.00 + VAT / €354.00",
+        details: "https://my.sweetsquared.com/education/course/260",
       },
       {
-        title: "CND™ Shellac™ Conversion",
+        title: "LashUS Master Volume",
         brief:
-          "CND™ Shellac™ Conversion class is designed for existing nail professionals to discover and learn the complete CND™ Shellac™ system from application to removal.  This class is product focused on ensuring the correct use of the CND™ Shellac™ systems.",
-        price: "£95.00 + VAT /€114.00",
-        details: "https://my.sweetsquared.com/education/course/87",
+          "Become a LASHUS Extension Master in just 1 day. Learn advanced techniques and enhance your skill to Master level by creating stunning volume hand made fans!",
+        price: "£299+vat / €358 ",
+        details: "https://my.sweetsquared.com/education/course/390",
       },
     ],
+    image: "/images/cnd-shellac.jpg"
   },
 };
 
