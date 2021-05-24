@@ -27,21 +27,21 @@ const brands = {
         title: "CND™ Brisa Gel Beginners",
         brief:
           "The CND™ Gel Beginners course will enable you to create thin, light natural looking enhancements using CND’s Brisa Gel. The pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-        price: "£725.00 + VAT / €870.00",
+        price: "£725.00+VAT / €870.00",
         details: "https://my.sweetsquared.com/education/course/85",
       },
       {
         title: "CND™ Shellac™ Beginners",
         brief:
           "During this 2 day course, you will discover and learn the complete CND™ Shellac™ system and be well equipped with tips and tricks to provide the world's most wanted manicure to your future clients. Pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-        price: "£435.00 + VAT / €522",
+        price: "£435.00+VAT / €522",
         details: "https://my.sweetsquared.com/education/course/84",
       },
       {
         title: "CND™ Shellac™ Conversion",
         brief:
           "CND™ Shellac™ Conversion class is designed for existing nail professionals to discover and learn the complete CND™ Shellac™ system from application to removal.  This class is product focused on ensuring the correct use of the CND™ Shellac™ systems.",
-        price: "£95.00 + VAT /€114.00",
+        price: "£95.00+VAT /€114.00",
         details: "https://my.sweetsquared.com/education/course/87",
       },
       {
@@ -121,21 +121,21 @@ const brands = {
         title: "LASH GRAD",
         brief:
           "Become a LASH GRAD in just one day, suitable for beginners and conversion, learn techniques for applying single lashes and pre-made fans to create classic and hybrid looks.",
-        price: "£350+vat / €420",
+        price: "£350+VAT / €420",
         details: "https://my.sweetsquared.com/education/course/361",
       },
       {
         title: "LashUS The Lift",
         brief:
           "With Lash Lifts becoming one of the fastest growing beauty treatments around , and clients looking everywhere for trained technicians isn’t it about time you learned to turn it up and become one of US.",
-        price: "£295.00 + VAT / €354.00",
+        price: "£295.00+VAT / €354.00",
         details: "https://my.sweetsquared.com/education/course/260",
       },
       {
         title: "LashUS Master Volume",
         brief:
           "Become a LASHUS Extension Master in just 1 day. Learn advanced techniques and enhance your skill to Master level by creating stunning volume hand made fans!",
-        price: "£299+vat / €358 ",
+        price: "£299+VAT / €358 ",
         details: "https://my.sweetsquared.com/education/course/390",
       },
     ],
@@ -152,27 +152,27 @@ const brands = {
         title: "LE Beginners",
         brief:
           "Learn how to become a Light Elegance Nail Enhancement Technician in just 3 days with a kit worth over £560//€672 that includes the LE DOT. The Light Elegance Beginners course will provide you with the fundamental techniques that will assist you on your journey in creating perfect enhancement services. Learn the difference between all of the 6 different Lexy Line hard gels allowing you the nail professional the complete control and creativity to achieve the perfect nail every time.",
-        price: "£545.00 + VAT / €654.00",
+        price: "£545.00+VAT / €654.00",
         details: "https://my.sweetsquared.com/education/course/394",
       },
       {
         title: "LE Come On Over",
         brief:
           "This 2 day course is designed for existing Nail Enhancement professionals in Gel or L&P. Learn all things Lexy Line with an explosion of glitter, colour and sparkle!",
-        price: "£470.00 + VAT / €564.00",
+        price: "£470.00+VAT / €564.00",
         details: "https://my.sweetsquared.com/education/course/322",
       },
       {
         title: "LE Love Lexy",
         brief:
           "The Love Lexy course will provide you with fundamental techniques that will improve your Gel enhancement skills. The Lexy line is made up of 6 different hard gel products to allow the nail professional the complete control and creativity to achieve the perfect nail  every time meeting very specific needs of their clients.",
-        price: "£360.00 + VAT / €432.00",
+        price: "£360.00+VAT / €432.00",
         details: "https://my.sweetsquared.com/education/course/324",
       },      {
         title: "LEXtasy",
         brief:
           "The LEXtasy course will  introduce you to the amazing high performance LE Gel colours, glitter gels and the advanced technology of the Buttercreams. You'll learn how to create the latest, on trend, most attractive nail art bursting with colour that will literally blow your clients minds!",
-        price: "£350.00 + VAT / €420.00",
+        price: "£350.00+VAT / €420.00",
         details: "https://my.sweetsquared.com/education/course/326",
       },
     ],
@@ -229,35 +229,35 @@ const courses = [
     title: "Light Elegance Beginners Course",
     brief:
       "The Light Elegance Beginners course will provide you with the fundamental techniques that will assist you on your journey in creating perfect enhancement services. Learn the difference between all of the 6 different Lexy Line hard gels allowing you the nail professional the complete control and creativity to achieve the perfect nail every time.",
-    price: "£545.00 + VAT / €654.00",
+    price: "£545.00+VAT / €654.00",
     details: "https://my.sweetsquared.com/education/course/394",
   },
   {
     title: "CND™ Brisa Gel Beginners",
     brief:
       "The CND™ Gel Beginners course will enable you to create thin, light natural looking enhancements using CND’s Brisa Gel. The pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-    price: "£725.00 + VAT / €870.00",
+    price: "£725.00+VAT / €870.00",
     details: "https://my.sweetsquared.com/education/course/85",
   },
   {
     title: "CND™ Shellac™ Beginners",
     brief:
       "During this 2 day course, you will discover and learn the complete CND™ Shellac™ system and be well equipped with tips and tricks to provide the world's most wanted manicure to your future clients. Pre-class home study is added to enhance your learning and increase your hands-on time in class.",
-    price: "£435.00 + VAT / €522",
+    price: "£435.00+VAT / €522",
     details: "https://my.sweetsquared.com/education/course/84",
   },
   {
     title: "Light Elegance Beginners Course",
     brief:
       "The Light Elegance Beginners course will provide you with the fundamental techniques that will assist you on your journey in creating perfect enhancement services. Learn the difference between all of the 6 different Lexy Line hard gels allowing you the nail professional the complete control and creativity to achieve the perfect nail every time.",
-    price: "£545.00 + VAT / €654.00",
+    price: "£545.00+VAT / €654.00",
     details: "https://my.sweetsquared.com/education/course/394",
   },
   {
     title: "CND™ Shellac™ Conversion",
     brief:
       "CND™ Shellac™ Conversion class is designed for existing nail professionals to discover and learn the complete CND™ Shellac™ system from application to removal.  This class is product focused on ensuring the correct use of the CND™ Shellac™ systems.",
-    price: "£95.00 + VAT /€114.00",
+    price: "£95.00+VAT /€114.00",
     details: "https://my.sweetsquared.com/education/course/87",
   },
 ];
