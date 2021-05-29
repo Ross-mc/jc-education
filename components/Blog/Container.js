@@ -1,5 +1,6 @@
 import BlogSummary from "./Summary";
 import {useState} from "react";
+import FullBlogPost from "./Full";
 
 const BlogContainer = ({ blogPosts }) => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
@@ -10,6 +11,20 @@ const BlogContainer = ({ blogPosts }) => {
       setSelectedBlogPost(blogPost);
       console.log(blogPost)
     }
+  };
+
+  const returnToAllPosts = () => {
+    setSelectedBlogPost(null)
+  }
+
+
+  if (selectedBlogPost){
+    return (
+      <>
+        <FullBlogPost blogPost={selectedBlogPost} />
+        <button onClick={returnToAllPosts}>Return</button>
+      </>
+    )
   }
 
 
