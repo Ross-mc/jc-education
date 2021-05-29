@@ -1,5 +1,3 @@
-import {useEffect, useState} from "react"
-import HomePageBlog from "../components/Blog/HomePageBlog";
 import Hero from "../components/Brand/Hero";
 import Landing from "../components/Landing/Landing";
 import data from "../utils/data";
@@ -7,16 +5,6 @@ import data from "../utils/data";
 const Home = (props) => {
   const { brands, titleCard, blurb } = props;
   const brandKeys = Object.keys(brands);
-
-  const [blogPosts, setBlogPosts] = useState([]) 
-
-  useEffect(async () => {
-    const response = await fetch("/api/blog");
-    if (response.ok){
-      const blogPostData = await response.json();
-      setBlogPosts(blogPostData.blogPosts);
-    }
-  }, [])
 
   return (
     <>
@@ -30,7 +18,6 @@ const Home = (props) => {
           );
         })}
       </div>
-      {blogPosts.length > 0 && <HomePageBlog blogPost={blogPosts[0]}/>}
     </>
   );
 };
