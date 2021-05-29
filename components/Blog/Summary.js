@@ -1,7 +1,6 @@
 import classes from "./blog.module.css";
-import Link from "next/link";
 
-const BlogSummary = ({ blogPost }) => {
+const BlogSummary = ({ blogPost, updateBlogPost }) => {
   const formattedDate = new Date(blogPost.date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -17,7 +16,7 @@ const BlogSummary = ({ blogPost }) => {
         </div>
           <div className={classes.text}>
             <p>{blogPost.text.length > 200 ? blogPost.text.slice(0, 200) + "..." : blogPost.text}</p>
-            <Link href="/"><a className="btn">Full Post</a></Link>
+            <button className="btn" onClick={() => updateBlogPost(blogPost._id)}>Full Post</button>
           </div>
         </div>
       </div>
