@@ -3,6 +3,14 @@ import jsonwebtoken from "jsonwebtoken";
 import { sendImage } from "../../utils/cloudinary";
 require("dotenv").config();
 
+const stopWords = ["of", "is", "a", "the"];
+
+const createSlug = title => {
+  const words = title.split(" ");
+  const filteredWords = words.filter(word => !stopWords.includes(word));
+  return filteredWords.join("-");
+}
+
 const postHandler = async (blogPost) => {
   const { title, base64Img, text } = blogPost;
   let imageUrl;
@@ -21,6 +29,7 @@ const postHandler = async (blogPost) => {
     imageUrl,
     text,
     date: Date(),
+    slug: createSlug(title)
   };
 
   let connection;
