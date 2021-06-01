@@ -1,7 +1,4 @@
 import { useState, useRef, useEffect, useContext } from "react";
-// import { signIn, useSession, getSession  } from "next-auth/client";
-import { useRouter } from "next/router";
-
 import LoginForm from "./LoginForm";
 import BlogForm from "./BlogForm";
 import NotificationCtx from "../../store/notificationCtx";

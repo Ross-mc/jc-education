@@ -1,21 +1,25 @@
+import {useEffect, useState} from "react";
+import {useRouter} from "next/router"
 import BlogSummary from "./Summary";
-import {useState} from "react";
 import FullBlogPost from "./Full";
 
 const BlogContainer = ({ blogPosts }) => {
   const [selectedBlogPost, setSelectedBlogPost] = useState(null);
+  const router = useRouter();
 
   const updateBlogPost = (id) => {
     const blogPost = blogPosts.find(blogPost => blogPost._id === id);
     if (blogPost){
       setSelectedBlogPost(blogPost);
-      console.log(blogPost)
+      router.push("/blog");
     }
   };
 
   const returnToAllPosts = () => {
     setSelectedBlogPost(null)
   }
+
+  
 
 
   if (selectedBlogPost){

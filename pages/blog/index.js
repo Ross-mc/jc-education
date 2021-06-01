@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import BlogContainer from "../../components/Blog/Container";
 import Loading from "../../components/Loading";
 
