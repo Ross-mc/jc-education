@@ -64,7 +64,7 @@ const getHandler = async () => {
     const blogPostsCollection = db.collection("blogPosts");
     const blogPosts = await blogPostsCollection
       .find({})
-      .sort({ date: -1 })
+      .sort({ _id: -1 })
       .toArray();
     connection.close();
     return blogPosts;
