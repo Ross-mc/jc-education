@@ -50,7 +50,7 @@ const postHandler = async (blogPost) => {
   }
 };
 
-const getHandler = async () => {
+export const getHandler = async () => {
   let connection;
 
   try {
