@@ -1,9 +1,7 @@
-import {useRouter} from "next/router"
 import FullBlogPost from "../../components/Blog/Full";
 import { getHandler } from "../api/blog";
 
 const BlogPost = ({blogPost}) => {
-  const router = useRouter();
   if (blogPost){
     return (
       <FullBlogPost blogPost={blogPost}/>
