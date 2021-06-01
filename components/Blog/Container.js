@@ -22,7 +22,7 @@ const BlogContainer = ({ blogPosts }) => {
     return (
       <>
         <FullBlogPost blogPost={selectedBlogPost} />
-        <button onClick={returnToAllPosts}>Return</button>
+        <button className="btn" style={{width: 100}} onClick={returnToAllPosts}>Return</button>
       </>
     )
   }
