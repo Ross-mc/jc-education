@@ -64,6 +64,7 @@ const Modal = () => {
     }
 
     notificationCtx.toggleNotification();
+    modalCtx.toggleModal();
   };
 
   const modalCtx = useContext(ModalCtx);

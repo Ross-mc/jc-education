@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         <div className="listItem" style={{marginTop: "2px"}}>
           <a
-            href="https://www.facebook.com/jacki.bridge"
+            href="https://www.facebook.com/jacki.clarke.S2education"
             target="_blank"
             rel="noreferrer"
           >

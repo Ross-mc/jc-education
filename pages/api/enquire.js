@@ -26,7 +26,7 @@ export default async (req, res) => {
   const customerTemplate = htmlTemplate.toCustomer(customerName, courseTitle);
   const wasSuccessfulToCustomer = await sendEmail(customerEmail, `Your Enquiry for ${courseTitle}`, customerTemplate);
   const businessTemplate = htmlTemplate.toBusiness(customerName, customerEmail, customerPhone, comments, courseTitle);
-  const wasSuccessfulToBusiness = await sendEmail(process.env.OUTLOOK_ADDRESS, `New Enquiry for ${courseTitle}`, businessTemplate);
+  const wasSuccessfulToBusiness = await sendEmail(process.env.GMAIL_ADDRESS, `New Enquiry for ${courseTitle}`, businessTemplate);
 
   if (!wasSuccessfulToBusiness || !wasSuccessfulToCustomer){
     return res.status(500).json({message: "Internal Server Error"})
