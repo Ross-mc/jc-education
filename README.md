@@ -36,8 +36,7 @@ The Client required a website which would entice customers to enquire about the 
 
 ## Deployment
 
-Deployed through Netlify, the website is available [here](https://jacki-clarke.netlify.app/).
-(Currently using a standard netlify domain. A full domain will be obtained when the website is fully ready for launch)
+Deployed through Netlify, the website is available [here](https://www.jackiclarke.com/).
 
 <!-- screenshots -->
 ![Capture2](https://user-images.githubusercontent.com/67362834/119010008-8c472e80-b98b-11eb-9384-d5306548f059.JPG)
